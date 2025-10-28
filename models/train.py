@@ -19,7 +19,7 @@ X['Gender'] = LabelEncoder().fit_transform(X['Gender'])
 scaler = StandardScaler()
 X_Scaled = scaler.fit_transform(X)
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X_Scaled, y, test_size=0.2, random_state=42)
 
 model = Sequential([
     Dense(16, activation ='relu', input_shape=(X_train.shape[1],)),
